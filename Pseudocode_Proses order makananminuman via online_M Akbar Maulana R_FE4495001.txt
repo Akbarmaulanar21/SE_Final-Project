@@ -1,0 +1,38 @@
+START
+
+// Meminta input dari pengguna
+READ AND WRITE "namaPelanggan" with string
+READ AND WRITE "alamatPengiriman" with string
+READ AND WRITE "nomorTelepon" with number
+
+// Menampilkan daftar menu
+DISPLAY "Selamat datang di restoran online kami! Berikut adalah daftar menu kami:"
+DISPLAY "1. Nasi Goreng - Rp 20.000"
+DISPLAY "2. Mie Goreng - Rp 18.000"
+DISPLAY "3. Ayam Goreng - Rp 25.000"
+
+// Meminta input pesanan dari pengguna
+READ AND WRITE "pesanan" with string
+READ AND WRITE "jumlah" with string
+
+// Menghitung total harga pesanan
+IF pesanan = 1 THEN
+    SET harga = 20000
+ELSE IF pesanan = 2 THEN
+    SET harga = 18000
+ELSE IF pesanan = 3 THEN
+    SET harga = 25000
+SET totalHarga = harga * jumlah
+
+// Konfirmasi pesanan dan meminta konfirmasi pengiriman
+STORE KonfirmasiPesanan with string
+DISPLAY "Anda telah memesan " + jumlah + " " + pesanan
+DISPLAY "Total harga: Rp " + totalHarga
+
+READ AND WRITE AlamatPengiriman
+
+// Menampilkan rincian pesanan dan informasi pengiriman
+STORE konfirmasiPengiriman with string
+    DISPLAY "Pesanan akan dikirim ke alamat berikut:" alamatPengiriman + "KonfirmasiPesanan"
+    DISPLAY "Terima kasih telah memesan di restoran online kami!"
+END
